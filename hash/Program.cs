@@ -10,7 +10,6 @@ namespace hash
             string[,] board = new string[3, 3];
             initBoard(board);
 
-
             Console.Write("Informe o nome do Jogador 1: ");
             string player1 = Console.ReadLine();
             Console.Clear();

@@ -39,90 +39,90 @@ namespace hash
             if (board[0, 0] == board[0, 1] && board[0, 1] == board[0, 2] && board[0, 2] != " ")
             {
                 if (board[0, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2] && board[1, 2] != " ")
             {
                 if (board[1, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2] && board[2, 2] != " ")
             {
                 if (board[2, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2] && board[2, 2] != " ")
             {
                 if (board[0, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[2, 0] != " ")
             {
                 if (board[0, 2] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[0, 0] == board[1, 0] && board[1, 0] == board[2, 0] && board[2, 0] != " ")
             {
                 if (board[0, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2] && board[1, 2] != " ")
             {
                 if (board[1, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2] && board[2, 2] != " ")
             {
                 if (board[2, 0] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[0, 1] == board[1, 1] && board[1, 1] == board[2, 1] && board[2, 1] != " ")
             {
                 if (board[0, 1] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
             else if (board[0, 2] == board[1, 2] && board[1, 2] == board[2, 2] && board[2, 2] != " ")
             {
                 if (board[0, 2] == "O")
-                    Console.Write(player1 + " é o VENCEDOR!!!");
+                    Console.Write($"{player1} é o VENCEDOR!!!");
                 else
-                    Console.Write(player2 + " é o VENCEDOR!!!");
+                    Console.Write($"{player2} é o VENCEDOR!!!");
 
                 return true;
             }
@@ -173,12 +173,12 @@ namespace hash
 
         static int getPlayLine(string player)
         {
-            Console.Write(player + " informe a linha: ");
+            Console.Write($"{player} informe a linha: ");
             var position = int.Parse(Console.ReadLine()) - 1;
             return position;
         }
         static int getPlayColumn(string player) {
-            Console.Write(player + " informe a coluna: ");
+            Console.Write($"{player} informe a coluna: ");
             var position = int.Parse(Console.ReadLine()) - 1;
             Console.Clear();
             return position;
@@ -188,9 +188,9 @@ namespace hash
         static void viewBoard(string[,] board)
         {
             Console.WriteLine("  1|2|3");
-            Console.WriteLine("1 " + board[0, 0] + "|" + board[0, 1] + "|" + board[0, 2]);
-            Console.WriteLine("2 " + board[1, 0] + "|" + board[1, 1] + "|" + board[1, 2]);
-            Console.WriteLine("3 " + board[2, 0] + "|" + board[2, 1] + "|" + board[2, 2]);
+            Console.WriteLine($"1 {board[0, 0]} | {board[0, 1]} | {board[0, 2]}");
+            Console.WriteLine($"2 {board[1, 0]} | {board[1, 1]} | {board[1, 2]}");
+            Console.WriteLine($"3 {board[2, 0]} | {board[2, 1]} | {board[2, 2]}");
         }
         static string[,] initBoard(string[,] board)
         {

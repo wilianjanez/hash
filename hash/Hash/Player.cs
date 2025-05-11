@@ -171,13 +171,9 @@ namespace Hash
         public bool endGame(string[,] board)
         {
             for (int i = 0; i < board.GetLength(0); i++)
-            {
                 for (int j = 0; j < board.GetLength(1); j++)
-                {
                     if (board[i, j] == " ")
                         return false;
-                }
-            }
 
             return true;
         }

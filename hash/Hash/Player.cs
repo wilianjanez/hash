@@ -69,95 +69,31 @@ namespace Hash
         }
         public bool getWinner(string[,] board, Player player1, Player player2)
         {
-            if (board[0, 0] == board[0, 1] && board[0, 1] == board[0, 2] && board[0, 2] != " ")
+            var linesToCheck = new (int, int, int, int, int, int)[]
             {
-                if (board[0, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
+                // Linhas
+                (0,0, 0,1, 0,2),
+                (1,0, 1,1, 1,2),
+                (2,0, 2,1, 2,2),
+                // Colunas
+                (0,0, 1,0, 2,0),
+                (0,1, 1,1, 2,1),
+                (0,2, 1,2, 2,2),
+                // Diagonais
+                (0,0, 1,1, 2,2),
+                (0,2, 1,1, 2,0)
+            };
 
-                return true;
-            }
-            else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2] && board[1, 2] != " ")
+            foreach (var (r1, c1, r2, c2, r3, c3) in linesToCheck)
             {
-                if (board[1, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
+                string a = board[r1, c1], b = board[r2, c2], c = board[r3, c3];
 
-                return true;
-            }
-            else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2] && board[2, 2] != " ")
-            {
-                if (board[2, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2] && board[2, 2] != " ")
-            {
-                if (board[0, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0] && board[2, 0] != " ")
-            {
-                if (board[0, 2] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[0, 0] == board[1, 0] && board[1, 0] == board[2, 0] && board[2, 0] != " ")
-            {
-                if (board[0, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2] && board[1, 2] != " ")
-            {
-                if (board[1, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2] && board[2, 2] != " ")
-            {
-                if (board[2, 0] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[0, 1] == board[1, 1] && board[1, 1] == board[2, 1] && board[2, 1] != " ")
-            {
-                if (board[0, 1] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
-            }
-            else if (board[0, 2] == board[1, 2] && board[1, 2] == board[2, 2] && board[2, 2] != " ")
-            {
-                if (board[0, 2] == "O")
-                    Console.Write($"{player1.name} é o VENCEDOR!!!");
-                else
-                    Console.Write($"{player2.name} é o VENCEDOR!!!");
-
-                return true;
+                if (a == b && b == c && a != " ")
+                {
+                    string winnerName = (a == "O") ? player1.name : player2.name;
+                    Console.WriteLine($"{winnerName} é o VENCEDOR!!!");
+                    return true;
+                }
             }
 
             if (endGame(board))
